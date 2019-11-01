@@ -21,14 +21,22 @@ namespace DesignPatterns
             //calculador.RealizaCalculo(orcamento, iss);
 
             //CALCULADOR DE DESCONTO
-            CalculadorDeDescontos calculador = new CalculadorDeDescontos();
+            //CalculadorDeDescontos calculador = new CalculadorDeDescontos();
+            //Orcamento orcamento = new Orcamento(500);
+
+            //orcamento.AdicionaItem(new Item("CANETA", 500));
+            //orcamento.AdicionaItem(new Item("LAPIS", 500));
+
+            //double desconto = calculador.Calcula(orcamento);
+            //Console.WriteLine(desconto);
+
+            Imposto iss = new ISS(new ICMS());
+
             Orcamento orcamento = new Orcamento(500);
 
-            orcamento.AdicionaItem(new Item("CANETA", 500));
-            orcamento.AdicionaItem(new Item("LAPIS", 500));
+            double valor = iss.Calcula(orcamento);
 
-            double desconto = calculador.Calcula(orcamento);
-            Console.WriteLine(desconto);
+            Console.WriteLine(valor);
 
             Console.ReadKey();
         }
