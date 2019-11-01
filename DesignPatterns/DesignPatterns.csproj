@@ -50,6 +50,7 @@
     <Compile Include="Conta\IEstadoDeUmaConta.cs" />
     <Compile Include="Conta\SaldoNegativo.cs" />
     <Compile Include="Conta\SaldoPositivo.cs" />
+    <Compile Include="NotaFiscalBuilder.cs" />
     <Compile Include="DescontoPorCincoItens.cs" />
     <Compile Include="DescontoPorMaisDeQuinhetosReais.cs" />
     <Compile Include="EmAprovacao.cs" />
@@ -62,13 +63,14 @@
     <Compile Include="ISS.cs" />
     <Compile Include="ICMS.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="ItemDaNota.cs" />
+    <Compile Include="NotaFiscal.cs" />
     <Compile Include="Orcamento.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reprovado.cs" />
     <Compile Include="SemDesconto.cs" />
     <Compile Include="TemplateDeImpostoCondicional.cs" />
-    <Compile Include="Relatorios.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

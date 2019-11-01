@@ -10,7 +10,10 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+
+            //------------------------------------------------------------------------------
             //CALCULADOR DE IMPOSTO
+
             //Imposto iss = new ISS();
             //Imposto icms = new ICMS();
 
@@ -20,7 +23,9 @@ namespace DesignPatterns
 
             //calculador.RealizaCalculo(orcamento, iss);
 
+            //-----------------DECORATOR-------------------------------------------------------------
             //CALCULADOR DE DESCONTO
+
             //CalculadorDeDescontos calculador = new CalculadorDeDescontos();
             //Orcamento orcamento = new Orcamento(500);
 
@@ -40,26 +45,77 @@ namespace DesignPatterns
 
             //Console.ReadKey();
 
-            Orcamento reforma = new Orcamento(500);
+            //----------------STATES--------------------------------------------------------------
 
-            Console.WriteLine(reforma.Valor);
+            //Orcamento reforma = new Orcamento(500);
 
-            reforma.AplicaDesscontoExtra();
+            //Console.WriteLine(reforma.Valor);
 
-            Console.WriteLine(reforma.Valor);
+            //reforma.AplicaDesscontoExtra();
 
-            reforma.Aprova();
+            //Console.WriteLine(reforma.Valor);
 
-            reforma.AplicaDesscontoExtra();
+            //reforma.Aprova();
 
-            Console.WriteLine(reforma.Valor);
+            //reforma.AplicaDesscontoExtra();
 
-            reforma.Finaliza();
+            //Console.WriteLine(reforma.Valor);
 
-            reforma.AplicaDesscontoExtra();
+            //reforma.Finaliza();
 
-            Console.WriteLine(reforma.Valor);
+            //reforma.AplicaDesscontoExtra();
+
+            //Console.WriteLine(reforma.Valor);
+            //Console.ReadKey();
+
+            //-----------BUILDER---------------------------------------------------------------------
+
+            //IList<ItemDaNota> itensDaNota = new List<ItemDaNota>();
+
+            //itensDaNota.Add(new ItemDaNota("Biscoito", 2.50));
+            //itensDaNota.Add(new ItemDaNota("Desodorante", 8.00));
+            //itensDaNota.Add(new ItemDaNota("Feijão", 10.0));
+
+            //double valorTotal = 0;
+
+            //foreach (var item in itensDaNota)
+            //{
+            //    valorTotal += item.Valor;
+            //}
+
+            //double impostos = valorTotal * 0.05;
+
+            //NotaFiscal nf =
+            //    new NotaFiscal
+            //    (
+            //        "razao",
+            //        "cnpj",
+            //        DateTime.Now,
+            //        valorTotal,
+            //        impostos,
+            //        itensDaNota,
+            //        "obs qualquer"
+
+            //    );
+
+            NotaFiscalBuilder criador = new NotaFiscalBuilder();
+
+            criador.ParaEmpresa("Caelum Ensino e Inovacao")
+                .ComCnpj("Caelum Ensino e Inovacao")
+                .NaDataAtual()
+                .ComObservacoes("Uma obs qualquer")
+                .ComItem(new ItemDaNota("Biscoito", 100.0))
+                .ComItem(new ItemDaNota("Desodorante", 200.0));
+
+            NotaFiscal nf = criador.Constroi();
+
+            Console.WriteLine(nf.ValorBruto);
+            Console.WriteLine(nf.Impostos);
+            criador.Constroi();
             Console.ReadKey();
+
+            //------------------------------------------------------------------------------
+
         }
     }
 }
