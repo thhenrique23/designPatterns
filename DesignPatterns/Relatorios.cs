@@ -51,15 +51,4 @@ namespace DesignPatterns
             }
         }
     }
-
-    class Template
-    {
-        public void teste()
-        {
-            var teste = new List<Conta>();
-            teste.Add(new Conta { Nome = "Banco", Agencia = "503", Numero = "8888", Saldo = 5000.00 });
-            new RelatorioSimples().Imprime(teste);
-
-        }
-    }
 }

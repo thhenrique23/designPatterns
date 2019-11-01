@@ -30,14 +30,35 @@ namespace DesignPatterns
             //double desconto = calculador.Calcula(orcamento);
             //Console.WriteLine(desconto);
 
-            Imposto iss = new ISS(new ICMS());
+            //Imposto iss = new ISS(new ICMS());
 
-            Orcamento orcamento = new Orcamento(500);
+            //Orcamento orcamento = new Orcamento(500);
 
-            double valor = iss.Calcula(orcamento);
+            //double valor = iss.Calcula(orcamento);
 
-            Console.WriteLine(valor);
+            //Console.WriteLine(valor);
 
+            //Console.ReadKey();
+
+            Orcamento reforma = new Orcamento(500);
+
+            Console.WriteLine(reforma.Valor);
+
+            reforma.AplicaDesscontoExtra();
+
+            Console.WriteLine(reforma.Valor);
+
+            reforma.Aprova();
+
+            reforma.AplicaDesscontoExtra();
+
+            Console.WriteLine(reforma.Valor);
+
+            reforma.Finaliza();
+
+            reforma.AplicaDesscontoExtra();
+
+            Console.WriteLine(reforma.Valor);
             Console.ReadKey();
         }
     }
