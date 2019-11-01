@@ -46,6 +46,10 @@
     <Compile Include="Aprovado.cs" />
     <Compile Include="CalculadorDeDescontos.cs" />
     <Compile Include="CalculadorDeImpostos.cs" />
+    <Compile Include="Conta\Conta.cs" />
+    <Compile Include="Conta\IEstadoDeUmaConta.cs" />
+    <Compile Include="Conta\SaldoNegativo.cs" />
+    <Compile Include="Conta\SaldoPositivo.cs" />
     <Compile Include="DescontoPorCincoItens.cs" />
     <Compile Include="DescontoPorMaisDeQuinhetosReais.cs" />
     <Compile Include="EmAprovacao.cs" />
