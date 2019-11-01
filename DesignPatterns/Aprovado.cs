@@ -10,7 +10,7 @@ namespace DesignPatterns
     {
         public void AplicaDescontoExtra(Orcamento orcamento)
         {
-            orcamento.Valor = orcamento.Valor * 0.02;
+            orcamento.Valor -= orcamento.Valor * 0.02;
         }
 
         public void Aprova(Orcamento orcamento)
