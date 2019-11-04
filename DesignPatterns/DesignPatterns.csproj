@@ -43,34 +43,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aprovado.cs" />
-    <Compile Include="CalculadorDeDescontos.cs" />
-    <Compile Include="CalculadorDeImpostos.cs" />
+    <Compile Include="Status\Aprovado.cs" />
+    <Compile Include="Calculadora\CalculadorDeDescontos.cs" />
+    <Compile Include="Calculadora\CalculadorDeImpostos.cs" />
     <Compile Include="Conta\Conta.cs" />
     <Compile Include="Conta\IEstadoDeUmaConta.cs" />
     <Compile Include="Conta\SaldoNegativo.cs" />
     <Compile Include="Conta\SaldoPositivo.cs" />
-    <Compile Include="NotaFiscalBuilder.cs" />
-    <Compile Include="DescontoPorCincoItens.cs" />
-    <Compile Include="DescontoPorMaisDeQuinhetosReais.cs" />
-    <Compile Include="EmAprovacao.cs" />
-    <Compile Include="Finalizado.cs" />
-    <Compile Include="ICPP.cs" />
-    <Compile Include="IDesconto.cs" />
-    <Compile Include="IEstadoDeUmOracamento.cs" />
-    <Compile Include="IKCV.cs" />
-    <Compile Include="Imposto.cs" />
-    <Compile Include="ISS.cs" />
-    <Compile Include="ICMS.cs" />
+    <Compile Include="Builder\NotaFiscalBuilder.cs" />
+    <Compile Include="Descontos\DescontoPorCincoItens.cs" />
+    <Compile Include="Descontos\DescontoPorMaisDeQuinhetosReais.cs" />
+    <Compile Include="Status\EmAprovacao.cs" />
+    <Compile Include="Status\Finalizado.cs" />
+    <Compile Include="Impostos\ICPP.cs" />
+    <Compile Include="Interfaces\IDesconto.cs" />
+    <Compile Include="Interfaces\IEstadoDeUmOrcamento.cs" />
+    <Compile Include="Impostos\IKCV.cs" />
+    <Compile Include="Interfaces\Imposto.cs" />
+    <Compile Include="Impostos\ISS.cs" />
+    <Compile Include="Impostos\ICMS.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="ItemDaNota.cs" />
     <Compile Include="NotaFiscal.cs" />
     <Compile Include="Orcamento.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reprovado.cs" />
-    <Compile Include="SemDesconto.cs" />
-    <Compile Include="TemplateDeImpostoCondicional.cs" />
+    <Compile Include="Status\Reprovado.cs" />
+    <Compile Include="Descontos\SemDesconto.cs" />
+    <Compile Include="Templates\TemplateDeImpostoCondicional.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

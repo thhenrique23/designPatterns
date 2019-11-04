@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns
 {
-    public interface IEstadoDeUmOracamento
+    public interface IEstadoDeUmOrcamento
     {
         void AplicaDescontoExtra(Orcamento orcamento);
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPatterns
 {
-    public class Reprovado : IEstadoDeUmOracamento
+    public class Finalizado : IEstadoDeUmOrcamento
     {
         public void AplicaDescontoExtra(Orcamento orcamento)
         {
@@ -15,17 +15,17 @@ namespace DesignPatterns
 
         public void Aprova(Orcamento orcamento)
         {
-            throw new Exception("Orcamento já está em estado de reprovação");
+            throw new Exception("Orcamentos já está finalizado");
         }
 
         public void Finaliza(Orcamento orcamento)
         {
-            orcamento.EstadoAtual = new Finalizado();
+            throw new Exception("Orcamentos já está finalizado");
         }
 
         public void Reprova(Orcamento orcamento)
         {
-            throw new Exception("Orcamento está reprovado, não pode ser reprovado no momento");
+            throw new Exception("Orcamentos já está finalizado");
         }
     }
 }

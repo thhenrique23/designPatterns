@@ -8,7 +8,7 @@ namespace DesignPatterns
 {
     public class Orcamento
     {
-        public IEstadoDeUmOracamento EstadoAtual { get; set; }
+        public IEstadoDeUmOrcamento EstadoAtual { get; set; }
         public double Valor { get; set; }
         public IList<Item> Itens { get; private set; }
         public Orcamento(double valor)
