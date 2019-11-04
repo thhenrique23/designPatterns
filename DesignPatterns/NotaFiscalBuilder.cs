@@ -21,6 +21,8 @@ namespace DesignPatterns
         {
             return new NotaFiscal(RazaoSocial, Cnpj, Data, valorTotal, impostos, todosItens, Observacoes);
         }
+
+
         public NotaFiscalBuilder ParaEmpresa(string razaoSocial)
         {
             this.RazaoSocial = razaoSocial;

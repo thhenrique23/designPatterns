@@ -35,15 +35,18 @@ namespace DesignPatterns
             //double desconto = calculador.Calcula(orcamento);
             //Console.WriteLine(desconto);
 
-            //Imposto iss = new ISS(new ICMS());
+            Imposto iss = new ISS();
 
-            //Orcamento orcamento = new Orcamento(500);
+            Orcamento orcamento = new Orcamento(100);
+            double valor = iss.Calcula(orcamento);
 
-            //double valor = iss.Calcula(orcamento);
 
-            //Console.WriteLine(valor);
+            iss.Calcula(orcamento);
 
-            //Console.ReadKey();
+
+            Console.WriteLine(valor);
+
+            Console.ReadKey();
 
             //----------------STATES--------------------------------------------------------------
 
@@ -70,51 +73,62 @@ namespace DesignPatterns
 
             //-----------BUILDER---------------------------------------------------------------------
 
-            //IList<ItemDaNota> itensDaNota = new List<ItemDaNota>();
+            IList<ItemDaNota> itensDaNota = new List<ItemDaNota>();
 
-            //itensDaNota.Add(new ItemDaNota("Biscoito", 2.50));
-            //itensDaNota.Add(new ItemDaNota("Desodorante", 8.00));
-            //itensDaNota.Add(new ItemDaNota("Feijão", 10.0));
+            itensDaNota.Add(new ItemDaNota("Biscoito", 2.50));
+            itensDaNota.Add(new ItemDaNota("Desodorante", 8.00));
+            itensDaNota.Add(new ItemDaNota("Feijão", 10.0));
 
-            //double valorTotal = 0;
+            double valorTotal = 0;
 
-            //foreach (var item in itensDaNota)
-            //{
-            //    valorTotal += item.Valor;
-            //}
+            foreach (var item in itensDaNota)
+            {
+                valorTotal += item.Valor;
+            }
 
-            //double impostos = valorTotal * 0.05;
+            double impostos = valorTotal * 0.05;
 
-            //NotaFiscal nf =
-            //    new NotaFiscal
-            //    (
-            //        "razao",
-            //        "cnpj",
-            //        DateTime.Now,
-            //        valorTotal,
-            //        impostos,
-            //        itensDaNota,
-            //        "obs qualquer"
+            NotaFiscal nf =
+                new NotaFiscal
+                (
+                    "razao",
+                    "cnpj",
+                    DateTime.Now,
+                    valorTotal,
+                    impostos,
+                    itensDaNota,
+                    "obs qualquer"
 
-            //    );
+                );
 
-            NotaFiscalBuilder criador = new NotaFiscalBuilder();
+            //NotaFiscalBuilder criador = new NotaFiscalBuilder();
 
-            criador.ParaEmpresa("Caelum Ensino e Inovacao")
+            NotaFiscal nf2 = new NotaFiscalBuilder()
+                .ParaEmpresa("Caelum Ensino e Inovacao")
                 .ComCnpj("Caelum Ensino e Inovacao")
                 .NaDataAtual()
                 .ComObservacoes("Uma obs qualquer")
                 .ComItem(new ItemDaNota("Biscoito", 100.0))
-                .ComItem(new ItemDaNota("Desodorante", 200.0));
+                .ComItem(new ItemDaNota("Desodorante", 200.0))
+                .Constroi();
 
-            NotaFiscal nf = criador.Constroi();
+
+            //NotaFiscal nf = criador.Constroi();
 
             Console.WriteLine(nf.ValorBruto);
             Console.WriteLine(nf.Impostos);
-            criador.Constroi();
             Console.ReadKey();
 
-            //------------------------------------------------------------------------------
+            //------------------------------------------------------------------------------//
+            var conta = new Conta.Conta(500);
+
+            conta.Saca(600);
+
+            Console.WriteLine(conta);
+
+            conta.Saca(100);
+
+
 
         }
     }
